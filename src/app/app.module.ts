@@ -4,13 +4,41 @@ import { AngularFireModule } from '@angular/fire';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { FirebaseService } from './services/firebase.service';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { HeaderComponent } from './components/header/header.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+import { AboutComponent } from './components/about/about.component';
+import { ChoseUsComponent } from './components/chose-us/chose-us.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { SpecialComponent } from './components/special/special.component';
+import { EventsComponent } from './components/events/events.component';
+import { PlaceOrderComponent } from './components/place-order/place-order.component';
+import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { OutletsComponent } from './components/outlets/outlets.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    TopBarComponent,
+    HeaderComponent,
+    WelcomeComponent,
+    AboutComponent,
+    ChoseUsComponent,
+    MenuComponent,
+    SpecialComponent,
+    EventsComponent,
+    PlaceOrderComponent,
+    TestimonialsComponent,
+    GalleryComponent,
+    OutletsComponent,
+    ContactUsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
