@@ -23,6 +23,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { OrderComponent } from './components/orders/order/order.component';
 import { OrderItemsComponent } from './components/orders/order-items/order-items.component';
+import { OrderService } from './shared/order.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,7 @@ import { OrderItemsComponent } from './components/orders/order-items/order-items
         appId: "1:614125145314:web:8921b99b94ecb297f622bb"
       })
   ],
-  providers: [FirebaseService],
+  providers: [FirebaseService,OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
