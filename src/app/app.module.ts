@@ -4,28 +4,33 @@ import { AngularFireModule } from 'angularfire2';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FirebaseService } from './services/firebase.service';
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { EmailComponent } from './email/email.component';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyBO7qTd12RayjgQO4Iuox4PXXdxXL8YM6k",
+  authDomain: "easyeats-629c6.firebaseapp.com",
+  projectId: "easyeats-629c6",
+  storageBucket: "easyeats-629c6.appspot.com",
+  messagingSenderId: "884342473277",
+  appId: "1:884342473277:web:7df77043564c6ab9152054",
+  measurementId: "G-N7J2G27MKD"
+};
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent,
+    EmailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(
-      {
-        apiKey: "AIzaSyAHAmCnnHc5WMBIqx2zs3ruwFDzrDvuObI",
-        authDomain: "easy-eats-f5129.firebaseapp.com",
-        projectId: "easy-eats-f5129",
-        storageBucket: "easy-eats-f5129.appspot.com",
-        messagingSenderId: "614125145314",
-        appId: "1:614125145314:web:8921b99b94ecb297f622bb"
-      })
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [FirebaseService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
