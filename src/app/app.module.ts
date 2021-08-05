@@ -20,6 +20,9 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { OutletsComponent } from './components/outlets/outlets.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { OrderComponent } from './components/orders/order/order.component';
+import { OrderItemsComponent } from './components/orders/order-items/order-items.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { FooterComponent } from './components/footer/footer.component';
     GalleryComponent,
     OutletsComponent,
     ContactUsComponent,
-    FooterComponent
+    FooterComponent,
+    OrdersComponent,
+    OrderComponent,
+    OrderItemsComponent
   ],
   imports: [
     BrowserModule,
