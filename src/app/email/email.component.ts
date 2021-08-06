@@ -11,8 +11,6 @@ import { Router } from '@angular/router';
   host:{'[@moveIn]': ''}
 })
 export class EmailComponent implements OnInit {
-  error: any;
-  state: string = '';
 
 
   constructor(public af: AngularFire, private router: Router) {
@@ -40,8 +38,7 @@ export class EmailComponent implements OnInit {
          }
        ).catch(
          (err) => {
-           console.log(err);
-           this.error =err;
+           console
          }
        )
      }

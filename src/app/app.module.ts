@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { EmailComponent } from './email/email.component';
+import { MembersComponent } from './members/members.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBO7qTd12RayjgQO4Iuox4PXXdxXL8YM6k",
@@ -18,17 +21,22 @@ export const firebaseConfig = {
   measurementId: "G-N7J2G27MKD"
 };
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    EmailComponent
+    EmailComponent,
+    MembersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
