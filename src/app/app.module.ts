@@ -10,6 +10,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { EmailComponent } from './email/email.component';
 import { MembersComponent } from './members/members.component';
+import { AuthGuard } from './auth.service';
+import { OpenCloseComponent } from './open-close/open-close.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBO7qTd12RayjgQO4Iuox4PXXdxXL8YM6k",
@@ -29,7 +31,8 @@ export const firebaseConfig = {
     LoginComponent,
     SignupComponent,
     EmailComponent,
-    MembersComponent
+    MembersComponent,
+    OpenCloseComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,7 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
