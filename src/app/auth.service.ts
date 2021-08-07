@@ -1,7 +1,8 @@
 import { state } from '@angular/animations';
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireAuth } from '@angular/fire/auth';
+// import {auth} from 'firebase/app'
 import { Observable } from 'rxjs';
 
 
@@ -17,7 +18,8 @@ export class AuthGuard implements CanActivate {
     .map((state: any) => !!state)
     .do((authenticated: any) => {
       if(!authenticated) this.router.navigate(['/login']);
-    })
+    });
+  
   }
   
 }

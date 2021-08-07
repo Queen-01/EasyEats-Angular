@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// for auth    
-import {AngularFireAuth} from 'angularfire2/auth';
-// for database
-import {AngularFireDatabase} from 'angularfire2/database';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { moveIn, fallIn } from '../router.animations';
 @Component({

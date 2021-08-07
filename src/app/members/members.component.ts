@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// for auth    
-import {AngularFireAuth} from 'angularfire2/auth';
-// for database
-import {AngularFireDatabase} from 'angularfire2/database';
+import { AngularFireAuth } from '@angular/fire/auth';
+
 import { Router } from '@angular/router';
 import { moveIn, fallIn, moveInLeft } from '../router.animations';
 
@@ -18,7 +16,7 @@ export class MembersComponent implements OnInit {
   state: string='';
 
   constructor(public af: AngularFireAuth, private router: Router) { 
-    this.af.auth.subscribe(auth=>{
+    this.af.authState.subscribe(auth=>{
       if(auth){
         this.name = auth;
       }
@@ -26,7 +24,7 @@ export class MembersComponent implements OnInit {
    }
 
    logout(){
-     this.af.auth.logout();
+     this.logout();
      console.log('logged out');
      this.router.navigateByUrl('/login');
    }
