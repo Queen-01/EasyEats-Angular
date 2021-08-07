@@ -1,5 +1,9 @@
 import { Component, OnInit, HostBinding} from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+// for auth    
+import {AngularFireAuth} from 'angularfire2/auth';
+// for database
+import {AngularFireDatabase} from 'angularfire2/database';
+import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 import { moveIn } from '../router.animations';
 @Component({
@@ -12,7 +16,7 @@ import { moveIn } from '../router.animations';
 export class LoginComponent implements OnInit {
   error: any;
 
-  constructor(public af : AngularFire, private router: Router) {
+  constructor(public af : AngularFireAuth, private router: Router) {
     this.af.auth.subscribe(auth => {
       if (auth) {
         this.router.navigateByUrl('/members');
@@ -21,13 +25,13 @@ export class LoginComponent implements OnInit {
    }
    loginGoogle(){
      this.af.auth.login({
-       provider: AuthProviders.Google,
-       method: AuthMethods.Popup,
+       provider: AngularFireDatabase,
+       method: AngularFireAuth,
      }).then(
-       (success) => {
+       (success: any) => {
          this.router.navigate(['/members']);
        }).catch(
-         (err) =>{
+         (err: any) =>{
            this.error = err;
          })
    }

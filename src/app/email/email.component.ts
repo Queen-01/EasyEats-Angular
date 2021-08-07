@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods} from 'angularfire2';
+import {AngularFireModule} from 'angularfire2';
+// for auth    
+import {AngularFireAuth} from 'angularfire2/auth';
+// for database
+import {AngularFireDatabase} from 'angularfire2/database';
+import * as firebase from 'firebase/app';
 import { moveIn, fallIn } from '../router.animations';
 import { Router } from '@angular/router';
 
@@ -11,12 +16,14 @@ import { Router } from '@angular/router';
   host:{'[@moveIn]': ''}
 })
 export class EmailComponent implements OnInit {
+  error: any;
+  state: string = '';
 
 
-  constructor(public af: AngularFire, private router: Router) {
+  constructor(public af: AngularFireAuth, private router: Router) {
     this.af.auth.subscribe((auth: any) =>{
       if(auth) {
-        this.router.navigateByUrl('/mambers');
+        this.router.navigateByUrl('/members');
       }
     });
    }
@@ -29,8 +36,8 @@ export class EmailComponent implements OnInit {
         password: formData.value.password
        },
        {
-         provider: AuthProviders.Password,
-         method: AuthMethods.Password,
+         provider: AngularFireDatabase,
+         method: AngularFireAuth,
        }).then(
          (success) =>{
            console.log(success);
@@ -38,7 +45,8 @@ export class EmailComponent implements OnInit {
          }
        ).catch(
          (err) => {
-           console
+           console.log(err);
+           this.error =err;
          }
        )
      }
