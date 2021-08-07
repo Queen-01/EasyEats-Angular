@@ -1,0 +1,8 @@
+<div class="form-container" id="toolbar">
+    <header [@fallIn]= "state">
+        <button (click)='logout()' class="btn">Log Out</button>
+    </header>
+    <div id="page" [@moveInLeft] = "state">
+        <h2>Welcome {{name.auth.displayName}}.</h2>
+    </div>
+</div>
