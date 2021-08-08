@@ -4,6 +4,8 @@ import { AngularFireDatabase } from '@angular/fire/database';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { LogoutComponent } from './logout/logout.component';
 import { SignupComponent } from './signup/signup.component';
 import { MembersComponent } from './members/members.component';
 import { AuthGuard } from './auth.service';
@@ -14,6 +16,8 @@ import { AngularFireModule } from '@angular/fire';
     AppComponent,
     SignupComponent,
     MembersComponent,
+    HomeComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

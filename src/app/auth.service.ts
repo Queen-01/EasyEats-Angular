@@ -10,6 +10,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
+  logout() {
+    throw new Error('Method not implemented.');
+  }
+  signup(email: string, password: string) {
+    throw new Error('Method not implemented.');
+  }
+  signin(email: string, password: string) {
+    throw new Error('Method not implemented.');
+  }
+  isLoggedIn: any;
 
   constructor(private auth: AngularFireAuth, private router: Router) { }
   canActivate() : Observable<boolean>{

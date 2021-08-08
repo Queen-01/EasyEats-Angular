@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-body">
+    <div>
+      <h2>Sign up</h2>
+      <input type="text" #emailSignUp>
+      <input type="text" #passwordSignUp>
+      <button (click)="onSignUp(emailSignUp.value, passwordSignUp.value)">Sign up</button>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+   <div>
+    <h2>LOG IN</h2>
+    <input type="text #emailSignUp">
+    <input type="text #passwordSignUp">
+    <button (click)="onSignIn(emailSignUp.value, passwordSignUp.value)">Sign up</button>
+   </div>
+  </div>
+</div>
+<app-logout *ngIf="isSignedIn" (isLogout)="handleLogout()"></app-logout>
