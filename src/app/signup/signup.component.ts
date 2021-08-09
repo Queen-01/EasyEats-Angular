@@ -16,7 +16,13 @@ export class SignupComponent implements OnInit {
   afAuth: any;
   isSignedIn: boolean;
 
-  constructor(public af: AngularFireAuth, private router: Router, public authService: AuthGuard) { }
+  constructor(public af: AngularFireAuth, private router: Router, public authService: AuthGuard) {
+    this.af.authState.subscribe(auth => { 
+      if(auth) {
+        this.router.navigateByUrl('/members');
+      }
+    });
+   }
  
   async onSignUp(email: string, password: string){
     await this.authService.signup(email, password)

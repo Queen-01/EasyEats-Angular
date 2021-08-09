@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthGuard } from '../auth.service';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute,ParamMap } from '@angular/router';
 import { moveIn } from '../router.animations';
+import { AngularFireAuth } from '@angular/fire/auth';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,16 +12,25 @@ import { moveIn } from '../router.animations';
 })
 export class HomeComponent implements OnInit {
   isSignedIn = false
+  service: any;
 
-  constructor(public authService : AuthGuard, private router: Router) { 
+  constructor(public authService : AuthGuard, private route: ActivatedRoute, private router: Router, public af: AngularFireAuth) { 
+    this.af.authState.subscribe(auth => { 
+      if(auth) {
+        this.router.navigateByUrl('/members');
+      }
+    });
     
   }
-
   ngOnInit() {
     if(localStorage.getItem('user') !== null)
     this.isSignedIn = true
     else
     this.isSignedIn = false
+
+    this.route.queryParams.subscribe(params => {
+      this.onSignIn = params['onSignIn'];
+    });
   }
   // async onSignUp(email: string, password: string){
   //   await this.firebaseService.signup(email, password)

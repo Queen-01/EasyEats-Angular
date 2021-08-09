@@ -1,4 +1,4 @@
-<div class="container">
+<div class="form-container">
   <h1>Welcome..</h1>
   <div class="row">
     <div class="col-md-6">
@@ -8,17 +8,17 @@
           <h2>LOG IN</h2>
 
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" #emailSignUp>
+            <input type="email" class="form-control txt" id="floatingInput" placeholder="name@example.com" #emailSignUp>
             <label for="floatingInput">Email address</label>
           </div>
 
           <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" #passwordSignUp>
+            <input type="password" class="form-control txt" id="floatingPassword" placeholder="Password" #passwordSignUp>
             <label for="floatingPassword">Password</label>
           </div>
 
           <div class="btn-click">
-            <button (click)="onSignIn(emailSignUp.value, passwordSignUp.value)" class="btn">Sign up</button>
+            <button (click)="onSignIn(emailSignUp.value, passwordSignUp.value)" class="btn"><a [routerLink]="['/members']" routerLinkActive="router-link-active" >Sign up</a></button>
           </div>
           <div>
           <p>Don't have an account?<a [routerLink]="['/signup']" routerLinkActive="router-link-active">Sign up..</a></p>

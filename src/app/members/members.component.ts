@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 import { Router } from '@angular/router';
+import { AuthGuard } from '../auth.service';
 import { moveIn, fallIn, moveInLeft } from '../router.animations';
 
 @Component({
@@ -15,7 +16,7 @@ export class MembersComponent implements OnInit {
   name: any;
   state: string='';
 
-  constructor(public af: AngularFireAuth, private router: Router) { 
+  constructor(public af: AngularFireAuth, private router: Router, private authService: AuthGuard) { 
     this.af.authState.subscribe(auth=>{
       if(auth){
         this.name = auth;
