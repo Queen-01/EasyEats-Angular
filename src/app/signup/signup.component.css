@@ -1,0 +1,16 @@
+.col-md-6{
+    padding: 15px;
+    display: inline;
+    align-items: center;
+}
+.big{
+    margin-top: 15px;
+}
+.btn-click{
+    margin-top: 15px;
+   
+}
+.btn{
+     border-radius: 20px;
+     background-color: cyan;
+}

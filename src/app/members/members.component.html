@@ -2,6 +2,8 @@
     <header [@fallIn]= "state">
         <button (click)='logout()' class="btn">Log Out</button>
     </header>
+    <!-- <app-logout *ngIf="isSignedIn" (isLogout)="handleLogout()"></app-logout> -->
+
     <div id="page" [@moveInLeft] = "state">
         <h2>Welcome {{name.auth.displayName}}.</h2>
     </div>

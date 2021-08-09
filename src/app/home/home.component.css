@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+h1{
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    text-align: center;
+    text-decoration: underline;
+}
+.col-md-6{
+    padding: 15px;
+    display: inline;
+    align-items: center;
+}
+.big{
+    margin-top: 15px;
+}
+.btn-click{
+    margin-top: 15px;
+   
+}
+.btn{
+     border-radius: 20px;
+     background-color: cyan;
+}
+/* .card{
+    right: 50%;
+    margin-left: -50%;
+    transform: translate(-50%, -50%) 
+} */

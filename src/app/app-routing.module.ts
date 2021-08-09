@@ -9,7 +9,6 @@ import { LogoutComponent } from './logout/logout.component';
 import { MembersComponent } from './members/members.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'logout', component: LogoutComponent},

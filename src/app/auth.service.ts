@@ -10,14 +10,23 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  logout() {
-    throw new Error('Method not implemented.');
+  logout(){
+    this.auth.signOut()
+    localStorage.removeItem('user')
   }
-  signup(email: string, password: string) {
-    throw new Error('Method not implemented.');
+  async signup(email : string, password : string){
+    await this.auth.createUserWithEmailAndPassword(email, password)
+    .then(res=>{
+      this.isLoggedIn = true
+      localStorage.setItem('user', JSON.stringify(res.user))
+    })
   }
-  signin(email: string, password: string) {
-    throw new Error('Method not implemented.');
+  async signin(email: string, password: string) {
+    await this.auth.signInWithEmailAndPassword(email, password)
+    .then(res=>{
+      this.isLoggedIn = true
+      localStorage.setItem('user', JSON.stringify(res.user))
+    })
   }
   isLoggedIn: any;
 

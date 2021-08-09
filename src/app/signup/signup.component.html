@@ -1,6 +1,4 @@
-<div class="form-container">
-    <a [routerLink]="['/login']"id="goback">Go Back</a>
-
+<!-- <div class="form-container">
     <h2>Join now</h2>
     <span class="error" *ngIf="error" [@fallIn] = 'state'>{{error}}</span>
 
@@ -9,5 +7,35 @@
         <input type="password" placeholder="Password" (ngModel)="password" name="password" class="txt" required>
 
         <button type="submit" class="basic-btn">Create my account</button>
-    </form>
+    </form> -->
+<!-- </div> -->
+
+<a [routerLink]="['/home']"id="goback">Go Back</a> 
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <div>
+          <h2>Sign up</h2>
+          <!-- <input type="text" #emailSignUp> -->
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" #emailSignUp>
+            <label for="floatingInput">Email address</label>
+          </div>
+          <!-- <input type="text" #passwordSignUp> -->
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" #passwordSignUp>
+            <label for="floatingPassword">Password</label>
+          </div>
+          <div class="form-floating big">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Confirm Password" #passwordSignUp>
+            <label for="floatingPassword">Confirm Password</label>
+          </div>
+          <div class="btn-click">
+            <button (click)="onSignUp(emailSignUp.value, passwordSignUp.value)" class="btn">Sign up</button>
+          </div>
+        </div>
+      </div>
+    </div>      
+  </div>
 </div>
