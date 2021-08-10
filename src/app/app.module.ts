@@ -8,8 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
 import { SignupComponent } from './signup/signup.component';
 import { MembersComponent } from './members/members.component';
-import { AuthGuard } from './auth.service';
+import { AuthService } from './Service/auth.service';
 import { AngularFireModule } from '@angular/fire';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { AngularFireModule } from '@angular/fire';
       }
     )
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

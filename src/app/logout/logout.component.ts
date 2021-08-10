@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { AuthGuard } from '../auth.service';
+import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-logout',
   templateUrl: './logout.component.html',
@@ -8,12 +8,12 @@ import { AuthGuard } from '../auth.service';
 export class LogoutComponent implements OnInit {
   @Output() isLogout = new EventEmitter<void>()
 
-  constructor(public firebaseService : AuthGuard) { }
+  constructor(public authService : AuthService) { }
 
   ngOnInit(): void {
   }
   onLogOut(){
-    this.firebaseService.logout()
+    this.authService.logout()
     this.isLogout.emit()
   }
 
