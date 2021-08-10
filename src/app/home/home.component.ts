@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthGuard } from '../auth.service';
+import { AuthService } from '../auth.service';
 import { Router,ActivatedRoute,ParamMap } from '@angular/router';
 import { moveIn } from '../router.animations';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   isSignedIn = false
   service: any;
 
-  constructor(public authService : AuthGuard, private route: ActivatedRoute, private router: Router, public af: AngularFireAuth) { 
+  constructor(public authService : AuthService, private route: ActivatedRoute, private router: Router, public af: AngularFireAuth) { 
     this.af.authState.subscribe(auth => { 
       if(auth) {
         this.router.navigateByUrl('/members');
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
     this.isSignedIn = false
 
     this.route.queryParams.subscribe(params => {
-      this.onSignIn = params['onSignIn'];
+      this.onSignIn = params['/members'];
     });
   }
   // async onSignUp(email: string, password: string){
