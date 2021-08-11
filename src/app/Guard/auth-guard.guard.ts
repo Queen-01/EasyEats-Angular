@@ -23,7 +23,7 @@ export class AuthGuardGuard implements CanActivate {
   }
   
     canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : boolean|UrlTree {
-      if(!this.authService.isAdminUser()){
+      if(this.authService.isAdminUser()){
         alert('You are not allowed to view this page');
         return false;
       }

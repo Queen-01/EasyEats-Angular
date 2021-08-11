@@ -36,6 +36,10 @@ export class AuthService {
    }
 
    logoutUser() :void{
+     if(!this.isUserLoggedIn()){
+       alert('Logout success')
+        this.isLoggedIn=true;
+     }
      this.isLoggedIn = false;
    }
 }

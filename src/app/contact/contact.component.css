@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap');
+
+h2{
+    font-family: 'Lemonada', cursive;
+}
+.row{
+    margin-top: 15px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.col-md-4{
+    padding: 20px;
+}
+.col-md-5{
+    padding: 30px
+}
+.card{
+    box-shadow: 0  10px  20px  rgba(0,0,0,0.19), 0  6px  6px  rgba(0,0,0,0.23);
+}
+span{
+    font-weight: 600;
+    font-size: large;
+}

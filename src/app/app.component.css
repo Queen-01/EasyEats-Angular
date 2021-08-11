@@ -9,7 +9,7 @@ nav{
 }
 nav ul {
   display: flex;
-  align-items: center;
+  /* text-align: center; */
   
 }
 nav ul li {
@@ -18,6 +18,8 @@ nav ul li {
   padding: 10px;
   font-family: 'Lobster', cursive;
   font-size: 20px;
+  text-align: center;
+
 }
 nav ul li a{
   display: flex;

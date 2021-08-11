@@ -15,6 +15,10 @@ export class ProductAddComponent implements OnInit {
   constructor(private productService: ProductService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    let id = this.route.snapshot.params['id'];
+    this.productService.getProduct(id).subscribe(data =>{
+      this.product = data;
+    })
   }
 
 }

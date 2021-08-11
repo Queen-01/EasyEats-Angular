@@ -17,6 +17,7 @@
                <td>{{product.description}}</td>
                <td><a [routerLink]="['/product/view',product.productID]">View</a></td>
                <td><a [routerLink]="['/product/edit',product.productID]">Edit</a></td>
+               <td><a [routerLink]="['/product/add', product.productID]">Add</a></td>
            </tr>
        </tbody>
      </table>
