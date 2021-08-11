@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'EasyEatsAngular';
+  title = 'easy eats';
+  constructor(private authService: AuthService, private route: Router){
+
+  }
+  logout(){
+    this.authService.logoutUser();
+    this.route.navigate(['home']);
+  }
 }

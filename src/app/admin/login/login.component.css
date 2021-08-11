@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.card {
+    box-shadow: 0  10px  20px  rgba(0,0,0,0.19), 0  6px  6px  rgba(0,0,0,0.23);
+    padding-top: 20px;
+    margin-top: 10px;
+    width: 800px;
+    margin-left: 35%;
+    height: 300px;
+    font-size: 30px;
+    
+}
+h1{
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+    text-align: center;
+    text-decoration: underline;
+}
+.col-md-6{
+    padding: 15px;
+    display: inline;
+    align-items: center;
+}
+.big{
+    margin-top: 15px;
+}
+.btn-click{
+    margin-top: 15px;
+   
+}
+.btn{
+     border-radius: 20px;
+     background-color: cyan;
+}
+body {
+    background:#E2E4E6;
+    padding-top:4em;
+}
+
+.form-container {
+    background:white;
+    width:800px;
+    position:fixed;
+    left:50%;
+    margin-left:-250px;
+}
+
+
+.basic-btn {
+    background: #3B8598;
+    color:white;
+}
+
+input.txt {
+    background:#fff !important;
+    padding:1.3em 1em;
+    border: 1px solid #BBBBBB;
+}
+
+h2 {
+    font-family: 'Lobster', cursive;
+    margin: 1.5em 0 .9em 0;
+}
+label.bog{
+    font-size: 15px;
+}

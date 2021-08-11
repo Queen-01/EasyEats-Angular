@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h3>Login Form</h3>
+        <div>
+          <form #loginForm="ngForm" (ngSubmit)="onFormSubmit(loginForm)">
+             <div class="form-floating mb-3">
+              <input type="email" class="form-control txt" id="floatingInput" placeholder="name@example.com" ngModel>
+              <label for="floatingInput" class="bog">UserName</label>
+            </div>
+    
+            <div class="form-floating">
+              <input type="password" class="form-control txt" id="floatingPassword" placeholder="Password" ngModel>
+              <label for="floatingPassword" class="bog">Password</label>
+            </div>
+            <div class="btn-click">
+              <button type="submit" class="btn">Submit</button>
+            </div>
+           </form>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

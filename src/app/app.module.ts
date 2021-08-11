@@ -1,41 +1,53 @@
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from '@angular/fire';
 import { BrowserModule } from '@angular/platform-browser';
-import { AngularFireDatabase } from '@angular/fire/database';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './admin/login/login.component';
+import { RegisterComponent } from './admin/register/register.component';
+
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { ProductComponent } from './product/product.component';
+import { ProductAddComponent } from './product-add/product-add.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
+import { ProductViewComponent } from './product-view/product-view.component';
+import { ContactComponent } from './contact/contact.component';
+import { AuthService } from './auth/auth.service';
+import { AuthGuardGuard } from './Guard/auth-guard.guard';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './app.routes';
 import { HomeComponent } from './home/home.component';
-import { LogoutComponent } from './logout/logout.component';
-import { SignupComponent } from './signup/signup.component';
-import { MembersComponent } from './members/members.component';
-import { AuthService } from './Service/auth.service';
-import { AngularFireModule } from '@angular/fire';
-import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
-    MembersComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProductComponent,
+    ProductAddComponent,
+    ProductEditComponent,
+    ProductViewComponent,
+    ContactComponent,
     HomeComponent,
-    LogoutComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    AngularFireModule.initializeApp(
-      {
-        apiKey: "AIzaSyBO7qTd12RayjgQO4Iuox4PXXdxXL8YM6k",
-        authDomain: "easyeats-629c6.firebaseapp.com",
-        projectId: "easyeats-629c6",
-        storageBucket: "easyeats-629c6.appspot.com",
-        messagingSenderId: "884342473277",
-        appId: "1:884342473277:web:7df77043564c6ab9152054",
-        measurementId: "G-N7J2G27MKD"
-      }
-    )
+    FormsModule,
+    RouterModule.forRoot(appRoutes),
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyCGQrJdveWvZAql5DMnPohP145DtPJAe6Y",
+      authDomain: "exam-project-c4f9c.firebaseapp.com",
+      projectId: "exam-project-c4f9c",
+      storageBucket: "exam-project-c4f9c.appspot.com",
+      messagingSenderId: "306189844121",
+      appId: "1:306189844121:web:dfd6cca376a0d8b88dc208",
+      measurementId: "G-G3X250K3RJ"
+    })
   ],
-  providers: [AuthGuard, AuthService],
+  providers: [AuthService, AuthGuardGuard, ProductViewComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
