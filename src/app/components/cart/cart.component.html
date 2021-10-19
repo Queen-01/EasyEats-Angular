@@ -1,0 +1,102 @@
+
+
+<ng-container *ngIf="products.length !=0">
+    <div class="container" style="padding-top: 5%;">
+        <form style="padding-top: 5%; margin: 5%;">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Serving Waiter</label> 
+                        <select name="Pmethod"  type="text" class="form-control">
+                            <option *ngFor="let waiter of waiters" value="">-{{waiter.name}}</option>
+                        </select> 
+                    </div>
+                    <div class="form-group">
+                        <label>Select Table</label>
+                        <select name="Pmethod"  type="text" class="form-control">
+                            <option *ngFor="let table of tables" value="">-{{table.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Payment Method</label>
+                        <select name="Pmethod"  type="text" class="form-control">
+                            <option value="">-Cash</option>
+                            <option value="">-M-pesa</option>
+                            <option value="">-Visa Card</option>
+                        </select>
+                    </div>
+                   
+                    <div class="form-group">
+                        <label>Order Type</label>
+                        <select name="Pmethod"  type="text" class="form-control">
+                            <option *ngFor="let order  of orders" value="">-{{order.name}}</option>
+                        
+                        </select>
+                        
+                    </div>
+                </div>
+            </div>        
+        </form>
+     <div class="card-table" style="margin: 5%;">
+         <div class="cart-product">
+             <table class="table table-responsive">
+                 <thead>
+                     <tr>
+                         <th>Sr. NO</th>
+                         <th>Food Name</th>
+                         <th>Price</th>
+                         <th>Image</th>
+                         <th>Quantity</th>
+                         <th>Total</th>
+                         <th>Action</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr *ngFor="let product of products;let i = index">
+                         <td>{{i+1}}</td>
+                         <td style="width: 25%;">{{product.food}}</td>
+                         <td style="width: 15%;">{{product.price}}</td>
+                         <td><img style="width: 120px;" src="{{product.image}}" alt=""></td>
+                         <td>{{product.quantity}}</td>
+                         <td>{{product.total}}</td>
+                         <td>
+                             <button (click)="removeItem(product)" class="btn btn-danger">
+                                 <i class="fa fa-trash"></i>
+                             </button>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td colspan="4">
+                         </td>
+                         <td><button (click)="emptyCart()" class="btn btn-danger">Empty Cart</button></td>
+                         <td><button routerLink="/menu"  class="btn btn-warning">Shop More</button></td>
+                         <td><button class="btn btn-success">Check Out</button></td>
+                         <td>
+                             <strong>
+                                 Grand Total: Ksh {{grandTotal}}
+                             </strong>
+                         </td>
+                     </tr>
+                 </tbody>
+             </table>
+         </div>
+     </div>
+    </div>
+ </ng-container>
+ 
+ <ng-container *ngIf="products.length ==0">
+     <div class="container">
+         
+         <div class="card">
+             <h5 class="card-title">MyCart</h5>
+         </div>
+         <div class="center">
+             <img src="https://st.depositphotos.com/1000419/5003/v/600/depositphotos_50033451-stock-illustration-street-food-cart-for-your.jpg" alt="">
+             <h4>Your Cart is Empty!</h4>
+             <h6>Add item to it now</h6>
+             <button routerLink="/menu" class="btn btn-primary">Order Now</button>
+         </div>
+     </div>
+ </ng-container>

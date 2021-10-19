@@ -1,0 +1,28 @@
+<header id="header" class="fixed-top d-flex align-items-cente">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">Easy Eats</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" routerLink="">Home</a></li>
+          <li><a class="nav-link scrollto" routerLink="/about">About</a></li>
+          <li><a class="nav-link scrollto" routerLink="/outlets">Outlets</a></li>
+          <li><a class="nav-link scrollto" routerLink="/menu">Menu</a></li>
+          <li><a class="nav-link scrollto" routerLink="/gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" routerLink="/contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+      <a routerLink="cart" class="book-a-table-btn scrollto d-none d-lg-flex">Make an Order 
+
+        <span style="padding-left:5px;">
+          <i style="font-size: 30px;" class="fa fa-cart-plus"></i>
+            <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+        </span>
+      </a> 
+      
+    </div>
+  </header>

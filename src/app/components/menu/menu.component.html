@@ -1,0 +1,49 @@
+<section style="padding-top: 13%;" id="menu" class="menu section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Menu</h2>
+        <p>Check Our Tasty Menu</p>
+      </div>
+
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul id="menu-flters" *ngFor="let shop of shops">
+            <li (click)="getMenuForShop(shop.id)"data-filter=".filter-starters" style="font-weight:900; font-style:italic; font-size:20px;" >{{shop.name}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul id="menu-flters" *ngFor="let menu of shopMenus">
+            <li (click)="getCuisineForMenu(menu.id)" data-filter=".filter-starters" style="font-family: Courier; text-decoration: solid; font-size: large;">{{menu.name}} </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul id="menu-flters" *ngFor="let menu of menus">
+            <li data-filter=".filter-starters">{{menu.name}}</li>
+          </ul>
+        </div>
+      </div> -->
+
+      <div class="col-lg-8 menu-item filter-starters" *ngFor="let cuisine of cuisineMenus">
+        <div class="menu" style="display: flex;">
+          <div>
+                    <img src="{{cuisine.image}}" style="align-items: center; width: 150px; height: 100px;" alt="">
+          </div>
+          <div style="display:inline; padding-top: 2%;">
+            <button class="book-a-table-btn scrollto d-none d-lg-flex" style="color:black;" (click)="addtoCart(cuisine)">Order This</button>
+          </div>
+        </div>
+        <div class="menu-content" style="left: 12%; margin-bottom: -5%; padding-bottom: 12%;">
+          <a href="#">{{cuisine.food}}</a><span>{{cuisine.price}}</span>
+        </div>
+      </div>
+
+     
+
+    </div>
+  </section> 
